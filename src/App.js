@@ -1,5 +1,5 @@
 import logo from "./logo.svg";
-import "./App.css";
+import "./App.scss";
 import Home from "./components/Home";
 import AddNewProduct from "./components/AddNewProduct";
 
@@ -16,7 +16,7 @@ const App = () => {
         <Home />
       </header>
       <div className="content-right">
-        <AddNewProduct/>
+        <AddNewProduct />
       </div>
     </div>
   );
