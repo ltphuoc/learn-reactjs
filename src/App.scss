@@ -1,7 +1,15 @@
+body::-webkit-scrollbar {
+  width: 0.7em;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: grey;
+}
+
 .App {
   background-color: #282c34;
   padding: 40px;
-  height: calc(100vh - 80px);
+  min-height: calc(100vh - 80px);
   display: flex;
 
   .App-header {
@@ -29,14 +37,17 @@
     }
   }
 
-  .content-left,
-  .content-right {
-    width: 50%;
+  .content-left {
+    width: 20%;
     padding: 10px;
     color: #fff;
   }
 
   .content-right {
+    width: 80%;
+    padding: 10px;
+    color: #fff;
+
     .input-product {
       display: flex;
       flex-flow: column nowrap;
@@ -51,12 +62,18 @@
         border: none;
       }
     }
+
     button {
-      cursor: pointer;
       margin-top: 10px;
-      padding: 5px;
+      padding: 10px 15px;
+
+      background-color: goldenrod;
+      color: #fff;
+
       border: none;
       border-radius: 3px;
+
+      cursor: pointer;
     }
   }
 }

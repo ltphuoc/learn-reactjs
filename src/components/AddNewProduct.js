@@ -15,7 +15,20 @@ const AddNewProduct = () => {
       size,
       color,
     };
-    console.log("check data", object);
+
+    let productList = localStorage.getItem("productList");
+    if (productList) {
+      let arr = JSON.parse(productList);
+      arr.push(object);
+      localStorage.setItem("productList", JSON.stringify(arr));
+    } else {
+      localStorage.setItem("productList", JSON.stringify([object]));
+    }
+
+    setName("");
+    setPrice(0);
+    setSize(0);
+    setColor("");
   };
 
   const handleHideShow = () => {
