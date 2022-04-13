@@ -1,0 +1,36 @@
+#about {
+  background-color: #282c34;
+  height: calc(100vh - 51px);
+
+  text-align: center;
+
+  button,
+  input {
+    padding: 5px;
+    border-radius: 3px;
+    outline: none;
+    border: none;
+  }
+
+  input {
+    margin-left: 10px;
+  }
+  h1 {
+    padding: 20px 0;
+    margin: 0;
+    font-size: 50px;
+    color: goldenrod;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  ul {
+    li {
+      list-style: none;
+
+      a {
+        text-decoration: none;
+        color: #333333;
+      }
+    }
+  }
+}

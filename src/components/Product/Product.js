@@ -1,10 +1,10 @@
-import "./Product.scss";
-import mac1 from "../../assets/img/mac1.jpg";
-import mac2 from "../../assets/img/mac2.jpg";
-import mac3 from "../../assets/img/mac3.jpg";
-import mac4 from "../../assets/img/mac4.jpg";
-import { useState } from "react";
-import Lightbox from "react-image-lightbox";
+import './Product.scss';
+import mac1 from '../../assets/img/mac1.jpg';
+import mac2 from '../../assets/img/mac2.jpg';
+import mac3 from '../../assets/img/mac3.jpg';
+import mac4 from '../../assets/img/mac4.jpg';
+import { useState } from 'react';
+import Lightbox from 'react-image-lightbox';
 
 const images = [mac1, mac2, mac3, mac4];
 
@@ -20,21 +20,17 @@ const Product = () => {
   };
 
   return (
-    <div>
+    <div id="product">
       <div className="product-container">
         <div className="content-left">
           <div className="img-up">
-            <img
-              src={currentUpImg}
-              alt=""
-              onClick={() => handleClickPreviewImg()}
-            />
+            <img src={currentUpImg} alt="" onClick={() => handleClickPreviewImg()} />
           </div>
 
           <div className="img-down">
             <div className="img-small">
               <img
-                className={currentUpImg === mac1 ? "active" : ""}
+                className={currentUpImg === mac1 ? 'active' : ''}
                 src={mac1}
                 alt=""
                 onClick={() => setCurrentUpImg(mac1)}
@@ -42,7 +38,7 @@ const Product = () => {
             </div>
             <div className="img-small">
               <img
-                className={currentUpImg === mac2 ? "active" : ""}
+                className={currentUpImg === mac2 ? 'active' : ''}
                 src={mac2}
                 alt=""
                 onClick={() => setCurrentUpImg(mac2)}
@@ -50,7 +46,7 @@ const Product = () => {
             </div>
             <div className="img-small">
               <img
-                className={currentUpImg === mac3 ? "active" : ""}
+                className={currentUpImg === mac3 ? 'active' : ''}
                 src={mac3}
                 alt=""
                 onClick={() => setCurrentUpImg(mac3)}
@@ -58,7 +54,7 @@ const Product = () => {
             </div>
             <div className="img-small">
               <img
-                className={currentUpImg === mac4 ? "active" : ""}
+                className={currentUpImg === mac4 ? 'active' : ''}
                 src={mac4}
                 alt=""
                 onClick={() => setCurrentUpImg(mac4)}
@@ -74,7 +70,7 @@ const Product = () => {
             <label htmlFor="" className="quantity">
               So luong
             </label>
-            <input type="number" className="input-quantity" min="1" />
+            <input type="number" className="input-quantity" min="1" defaultValue={1} />
             <div className="">
               <button className="Buy-btn">Mua ngay</button>
             </div>
@@ -88,12 +84,8 @@ const Product = () => {
           nextSrc={images[(photoIndex + 1) % images.length]}
           prevSrc={images[(photoIndex + images.length - 1) % images.length]}
           onCloseRequest={() => setIsOpen(false)}
-          onMovePrevRequest={() =>
-            setPhotoIndex((photoIndex + images.length - 1) % images.length)
-          }
-          onMoveNextRequest={() =>
-            setPhotoIndex((photoIndex + 1) % images.length)
-          }
+          onMovePrevRequest={() => setPhotoIndex((photoIndex + images.length - 1) % images.length)}
+          onMoveNextRequest={() => setPhotoIndex((photoIndex + 1) % images.length)}
         />
       )}
     </div>

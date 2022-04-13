@@ -7,6 +7,7 @@ import Product from './components/Product/Product';
 import 'react-image-lightbox/style.css';
 import Nav from './components/Navigation/Nav';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import About from './components/About/About';
 // function App() {
 const App = () => {
   const [name, setName] = useState('ltphuoc');
@@ -14,16 +15,7 @@ const App = () => {
     <Router>
       <Nav />
       <Switch>
-        <Route path="/product">
-          <Product />
-        </Route>
-        <Route path="/weather">
-          <div className="">In future</div>
-        </Route>
-        <Route path="/about">
-          <div className="">I'm Phuoc</div>
-        </Route>
-        <Route path="/">
+        <Route path="/" exact>
           <div className="App">
             <header className="App-header content-left">
               <img src={logo} className="App-logo" alt="logo" />
@@ -36,6 +28,18 @@ const App = () => {
               <Product />
             </div>
           </div>
+        </Route>
+        <Route path="/product">
+          <Product />
+        </Route>
+        <Route path="/weather">
+          <div className="">In future</div>
+        </Route>
+        <Route path="/about">
+          <About />
+        </Route>
+        <Route path="*">
+          <div className="not-found-page">404 not found</div>
         </Route>
       </Switch>
     </Router>
