@@ -10,7 +10,7 @@ const AddTodo = (props) => {
           handleSubmit();
         }}
       >
-        Submit
+        Add
       </button>
     </div>
   );
