@@ -1,0 +1,16 @@
+.todo-list {
+  .completed {
+    color: red;
+  }
+
+  li {
+    display: flex;
+    gap: 15px;
+    span {
+      min-width: 300px;
+    }
+
+    button {
+    }
+  }
+}

@@ -15,6 +15,7 @@ function Todo() {
     let todoItem = {
       id: todoId,
       name: todo,
+      status: 'pending',
     };
     const newListTodo = [...listTodo, todoItem];
 
@@ -26,15 +27,31 @@ function Todo() {
 
   const handleDeleteTodo = (id) => {
     const newListTodo = [...listTodo.filter((item) => item.id !== id)];
+
     setListTodo(newListTodo);
 
     localStorage.setItem('list-todo', JSON.stringify(newListTodo));
   };
 
+  const handleDoneTodo = (item, index) => {
+    const newTodoList = [...listTodo];
+
+    newTodoList[index] = {
+      ...newTodoList[index],
+      status: newTodoList[index].status === 'pending' ? 'completed' : 'pending',
+    };
+
+    setListTodo(newTodoList);
+    localStorage.setItem('list-todo', JSON.stringify(newTodoList));
+  };
   return (
     <div>
       <AddTodo todo={todo} setTodo={setTodo} handleSubmit={handleSubmit} />
-      <DisplayTodo listTodo={listTodo} handleDeleteTodo={handleDeleteTodo} />
+      <DisplayTodo
+        listTodo={listTodo}
+        handleDoneTodo={handleDoneTodo}
+        handleDeleteTodo={handleDeleteTodo}
+      />
     </div>
   );
 }

@@ -9,6 +9,7 @@ import Nav from './components/Nav/Nav';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import About from './components/About/About';
 import Todo from './components/Todo/Todo';
+import Weather from './components/Weather/Weather';
 // function App() {
 const App = () => {
   const [name] = useState('Phuoc');
@@ -31,20 +32,13 @@ const App = () => {
           </div>
         </Route>
         <Route path="/todo">
-          {/* <div className="App">
-            <header className="App-header todo">
-              <img src={logo} className="App-logo" alt="logo" />
-              <p>Hello world with {name}</p>
-              <Home />
-            </header>
-          </div> */}
           <Todo />
         </Route>
         <Route path="/product">
           <Product />
         </Route>
         <Route path="/weather">
-          <div className="">In future</div>
+          <Weather />
         </Route>
         <Route path="/about">
           <About />
