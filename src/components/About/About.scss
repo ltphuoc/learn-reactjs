@@ -1,4 +1,4 @@
-#about {
+.about {
   background-color: #282c34;
   height: calc(100vh - 51px);
 
@@ -31,6 +31,12 @@
         text-decoration: none;
         color: #333333;
       }
+    }
+  }
+
+  &__random-food {
+    h2 {
+      color: white;
     }
   }
 }

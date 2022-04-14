@@ -9,13 +9,21 @@ const DisplayTodo = (props) => {
       <div>----- List Todo -----</div>
       {listTodo.map((item, index) => {
         return (
-          <div
-            key={item.id}
-            onClick={() => {
-              handleDeleteTodo(item.id);
-            }}
-          >
-            {item.name}
+          <div>
+            <ul>
+              <li>
+                <span
+                  key={item.id}
+                  onClick={() => {
+                    handleDeleteTodo(item.id);
+                  }}
+                >
+                  {item.name}
+                </span>
+                <button>Done</button>
+                <button>Remove</button>
+              </li>
+            </ul>
           </div>
         );
       })}

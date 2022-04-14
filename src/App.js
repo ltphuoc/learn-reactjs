@@ -5,7 +5,7 @@ import AddNewProduct from './components/AddNewProduct';
 import { useState } from 'react';
 import Product from './components/Product/Product';
 import 'react-image-lightbox/style.css';
-import Nav from './components/Navigation/Nav';
+import Nav from './components/Nav/Nav';
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
 import About from './components/About/About';
 // function App() {
@@ -27,6 +27,15 @@ const App = () => {
               <hr />
               <Product />
             </div>
+          </div>
+        </Route>
+        <Route path="/todo">
+          <div className="App">
+            <header className="App-header todo">
+              <img src={logo} className="App-logo" alt="logo" />
+              <p>Hello world with {name}</p>
+              <Home />
+            </header>
           </div>
         </Route>
         <Route path="/product">

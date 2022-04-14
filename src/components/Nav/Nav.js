@@ -8,6 +8,7 @@ const Nav = () => {
         Home
       </NavLink>
       <NavLink to="/product">Product</NavLink>
+      <NavLink to="/todo">Todo</NavLink>
       <NavLink to="/weather">Weather</NavLink>
       <NavLink to="/about">About</NavLink>
     </div>
