@@ -6,11 +6,12 @@ import { useState } from 'react';
 import Product from './components/Product/Product';
 import 'react-image-lightbox/style.css';
 import Nav from './components/Nav/Nav';
-import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import About from './components/About/About';
+import Todo from './components/Todo/Todo';
 // function App() {
 const App = () => {
-  const [name, setName] = useState('ltphuoc');
+  const [name] = useState('Phuoc');
   return (
     <Router>
       <Nav />
@@ -20,7 +21,7 @@ const App = () => {
             <header className="App-header content-left">
               <img src={logo} className="App-logo" alt="logo" />
               <p>Hello world with {name}</p>
-              <Home />
+              <Todo />
             </header>
             <div className="content-right">
               <AddNewProduct />
@@ -30,13 +31,14 @@ const App = () => {
           </div>
         </Route>
         <Route path="/todo">
-          <div className="App">
+          {/* <div className="App">
             <header className="App-header todo">
               <img src={logo} className="App-logo" alt="logo" />
               <p>Hello world with {name}</p>
               <Home />
             </header>
-          </div>
+          </div> */}
+          <Todo />
         </Route>
         <Route path="/product">
           <Product />

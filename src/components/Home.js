@@ -1,14 +1,14 @@
-import React, { useState } from "react";
-import AddTodo from "./AddTodo";
-import DisplayTodo from "./DisplayTodo";
+import React, { useState } from 'react';
+import AddTodo from './Todo/AddTodo';
+import DisplayTodo from './Todo/DisplayTodo';
 
 const Home = () => {
-  const [todo, setTodo] = useState("");
+  const [todo, setTodo] = useState('');
 
   const [listTodo, setListTodo] = useState([
-    { id: "todo1", name: "Learn React js" },
-    { id: "todo2", name: "Learn Node js" },
-    { id: "todo3", name: "Learn Next js" },
+    { id: 'todo1', name: 'Learn React js' },
+    { id: 'todo2', name: 'Learn Node js' },
+    { id: 'todo3', name: 'Learn Next js' },
   ]);
 
   const randomIntFromInterval = (min, max) => {
@@ -25,7 +25,7 @@ const Home = () => {
     };
 
     setListTodo([...listTodo, todoItem]);
-    setTodo("");
+    setTodo('');
   };
 
   const handleDeleteTodo = (id) => {
