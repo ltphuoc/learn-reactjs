@@ -1,0 +1,65 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+.form-registraction {
+  padding: 30px;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #9f9f9f, #e4e4e4);
+  text-align: center;
+
+  h2 {
+    text-decoration: underline;
+    margin-bottom: 30px;
+  }
+
+  .action {
+    margin-top: 10px;
+    button {
+      padding: 10px 15px;
+      border-radius: 4px;
+      background-color: transparent;
+      cursor: pointer;
+      font-weight: 500;
+      outline: none;
+      border: 1px solid #333333;
+      font-size: 16px;
+      margin-left: 50px;
+    }
+  }
+  .input-registration {
+    display: flex;
+    align-items: center;
+    margin-left: 100px;
+    padding: 20px;
+
+    label {
+      text-align: left;
+      width: 150px;
+      // width: 50%;
+    }
+
+    ul {
+      display: flex;
+      li {
+        padding: 0 7px;
+        list-style: none;
+
+        span {
+          margin-left: 5px;
+        }
+      }
+    }
+
+    > input,
+    textarea {
+      height: 26px;
+      width: 50%;
+    }
+    > textarea {
+      height: 78px;
+    }
+  }
+}

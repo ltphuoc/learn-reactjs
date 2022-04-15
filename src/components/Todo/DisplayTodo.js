@@ -1,5 +1,4 @@
 import classNames from 'classnames';
-import { useState } from 'react';
 import './Todo.scss';
 const DisplayTodo = (props) => {
   const { listTodo, handleDeleteTodo, handleDoneTodo } = props;

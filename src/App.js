@@ -10,6 +10,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import About from './components/About/About';
 import Todo from './components/Todo/Todo';
 import Weather from './components/Weather/Weather';
+import Registration from './components/Registration/Registration';
 // function App() {
 const App = () => {
   const [name] = useState('Phuoc');
@@ -22,13 +23,13 @@ const App = () => {
             <header className="App-header content-left">
               <img src={logo} className="App-logo" alt="logo" />
               <p>Hello world with {name}</p>
-              <Todo />
+              {/* <Todo /> */}
             </header>
-            <div className="content-right">
+            {/* <div className="content-right">
               <AddNewProduct />
               <hr />
               <Product />
-            </div>
+            </div> */}
           </div>
         </Route>
         <Route path="/todo">
@@ -42,6 +43,9 @@ const App = () => {
         </Route>
         <Route path="/about">
           <About />
+        </Route>
+        <Route path="/registration">
+          <Registration />
         </Route>
         <Route path="*">
           <div className="not-found-page">404 not found</div>
