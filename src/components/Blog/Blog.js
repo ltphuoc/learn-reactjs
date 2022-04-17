@@ -11,15 +11,20 @@ const Blog = () => {
   const [pagination, setPagination] = useState({
     _page: 1,
     _limit: 9,
-    _totalRow: 1,
+    _totalRows: 1,
   });
   const [filter, setFilter] = useState({
-    _limit: 9,
     _page: 1,
+    _limit: 9,
+    title_like: '',
   });
 
   const handlePageChange = (newPage) => {
     setFilter({ ...filter, _page: newPage });
+  };
+
+  const handleFilterChange = (newFilter) => {
+    setFilter({ ...filter, _page: 1, title_like: newFilter.searchTerm });
   };
 
   useEffect(() => {
@@ -35,7 +40,7 @@ const Blog = () => {
         setTimeout(() => {
           setPostList(data);
           setPagination(pagination);
-        }, 1000);
+        }, 300);
       } catch (error) {
         console.log(error);
       }
@@ -45,7 +50,7 @@ const Blog = () => {
 
   return (
     <div className="blog">
-      <Search />
+      <Search onSubmit={handleFilterChange} />
       <div className="post-list">
         {postList.map((item) => (
           <div

@@ -1,6 +1,6 @@
 function Pagination(props) {
   const { pagination, onPageChange } = props;
-  const { _page, _limit, _totalRow } = pagination;
+  const { _page, _limit, _totalRows } = pagination;
   const handlePageChange = (newPage) => {
     onPageChange(newPage);
   };
@@ -11,7 +11,7 @@ function Pagination(props) {
         Prev
       </button>
       <button
-        disabled={_page >= Math.ceil(_totalRow / _limit)}
+        disabled={_page >= Math.ceil(_totalRows / _limit)}
         onClick={() => handlePageChange(_page + 1)}
       >
         Next
