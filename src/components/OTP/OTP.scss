@@ -1,0 +1,74 @@
+.otp {
+  max-width: 70vw;
+  margin: 0 auto;
+  padding: 20px;
+
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+  align-items: center;
+  gap: 20px;
+  .generate-otp {
+    text-align: center;
+    font-weight: 700;
+    button {
+      padding: 10px;
+      margin-bottom: 15px;
+
+      border: 0;
+      border-radius: 3px;
+
+      font-weight: 500;
+
+      cursor: pointer;
+    }
+  }
+
+  .input-otp {
+    display: flex;
+    justify-content: center;
+    flex-flow: column;
+    align-items: center;
+    gap: 15px;
+
+    padding: 25px 20px;
+
+    border: 3px solid grey;
+
+    > div:first-child {
+      font-weight: 700;
+      font-size: 22px;
+      padding: 5px 0;
+      margin-bottom: 10px;
+    }
+
+    &__code {
+      width: 3rem !important;
+      height: 3rem;
+
+      margin: 0 1rem;
+
+      font-size: 2rem;
+
+      border-radius: 3px;
+      border: 1px solid grey;
+    }
+
+    .timer {
+    }
+    .action {
+      display: flex;
+      gap: 0 30px;
+      button {
+        padding: 10px;
+
+        border: 0;
+        border-radius: 3px;
+
+        font-weight: 500;
+
+        cursor: pointer;
+      }
+    }
+  }
+}

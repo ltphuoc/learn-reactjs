@@ -1,7 +1,5 @@
 import logo from './logo.svg';
 import './App.scss';
-import Home from './components/Home';
-import AddNewProduct from './components/AddNewProduct';
 import { useState } from 'react';
 import Product from './components/Product/Product';
 import 'react-image-lightbox/style.css';
@@ -9,8 +7,9 @@ import Nav from './components/Nav/Nav';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import About from './components/About/About';
 import Todo from './components/Todo/Todo';
-import Weather from './components/Weather/Weather';
 import Registration from './components/Registration/Registration';
+import OTP from './components/OTP/OTP';
+import Blog from './components/Blog/Blog';
 // function App() {
 const App = () => {
   const [name] = useState('Phuoc');
@@ -38,14 +37,17 @@ const App = () => {
         <Route path="/product">
           <Product />
         </Route>
-        <Route path="/weather">
-          <Weather />
+        <Route path="/blog">
+          <Blog />
         </Route>
         <Route path="/about">
           <About />
         </Route>
         <Route path="/registration">
           <Registration />
+        </Route>
+        <Route path="/otp">
+          <OTP />
         </Route>
         <Route path="*">
           <div className="not-found-page">404 not found</div>

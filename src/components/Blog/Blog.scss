@@ -1,0 +1,49 @@
+.blog {
+  .search {
+    text-align: center;
+    // padding: 20px 0 0 0;
+    margin-top: 25px;
+
+    input {
+      width: 25%;
+      padding: 15px;
+      font-size: 16px;
+      border-radius: 5px;
+    }
+  }
+
+  .post-list {
+    padding: 50px;
+    padding-bottom: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto;
+
+    gap: 20px 20px;
+    grid-auto-flow: row;
+    grid-template-areas: '. . .';
+
+    .post-item {
+      height: 200px;
+      text-align: center;
+      color: aqua;
+    }
+  }
+
+  .pagination {
+    display: flex;
+    gap: 0 25px;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+
+    button {
+      padding: 10px;
+
+      border-radius: 3px;
+
+      color: #000;
+      cursor: pointer;
+    }
+  }
+}
