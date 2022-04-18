@@ -1,10 +1,8 @@
-import axios from 'axios';
 import { useEffect, useState } from 'react';
 import queryString from 'query-string';
 import './Blog.scss';
 import Pagination from './Pagination';
 import Search from './Search';
-import { set } from 'lodash';
 
 const Blog = () => {
   const [postList, setPostList] = useState([]);

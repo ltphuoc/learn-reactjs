@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 
 const CountDown = (props) => {
-  // const { setIsDisabled } = props;
   const { setIsDisabled, time, setTime } = props;
+  // const { setIsDisabled } = props;
   // const [count, setCount] = useState(10);
 
   // useEffect(() => {
@@ -33,7 +33,7 @@ const CountDown = (props) => {
     return () => {
       clearInterval(idInternal);
     };
-  }, [time]);
+  }, [setIsDisabled, time, setTime]);
 
   return <div>{time}</div>;
 };

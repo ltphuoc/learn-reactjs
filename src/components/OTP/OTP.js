@@ -1,29 +1,44 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import GenerateOTP from './GenerateOTP';
 import InputOTP from './InputOTP';
+import { ToastContainer, toast } from 'react-toastify';
 import './OTP.scss';
+import 'react-toastify/dist/ReactToastify.css';
+
 const OTP = () => {
   const [orgOTP, setOrgOTP] = useState('');
   const [userOTP, setUserOTP] = useState('');
   const [isDisabled, setIsDisabled] = useState(false);
 
+  const defaultTime = 15;
+  const [time, setTime] = useState(0);
+
   const handleSubmit = () => {
     if (+orgOTP === +userOTP) {
-      alert('Correct');
+      toast.success('Correct');
     } else {
-      alert('Invalid OTP');
+      toast.error('Invalid');
     }
   };
 
   return (
     <div className="otp">
-      <GenerateOTP setOrgOTP={setOrgOTP} />
+      <GenerateOTP
+        setIsDisabled={setIsDisabled}
+        setOrgOTP={setOrgOTP}
+        setTime={setTime}
+        defaultTime={defaultTime}
+      />
       <InputOTP
         setUserOTP={setUserOTP}
         handleSubmit={handleSubmit}
-        isDisabled={isDisabled}
+        isDisabled={orgOTP === '' ? true : isDisabled}
+        // isDisabled={isDisabled}
         setIsDisabled={setIsDisabled}
+        time={time}
+        setTime={setTime}
       />
+      <ToastContainer />
     </div>
   );
 };

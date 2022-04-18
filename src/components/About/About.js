@@ -5,7 +5,20 @@ const About = () => {
   const [name, setName] = useState('Le Thanh Phuoc');
   const [isOpen, setIsOpen] = useState(false);
 
-  const foodList = ['Phở', 'Cơm tấm', 'Bánh mì', 'Bánh giò', 'Yến mạch', 'Xôi', 'Bún thịt nướng'];
+  const foodList = [
+    'Phở',
+    'Cơm tấm',
+    'Bánh mì',
+    'Bánh giò',
+    'Yến mạch',
+    'Xôi',
+    'Bún thịt nướng',
+    'Beefsteak',
+    'Bánh bao',
+    'Hamburger',
+    'Sandwich',
+    'Nhịn',
+  ];
   const [food, setFood] = useState('');
   return (
     <div className="about">
