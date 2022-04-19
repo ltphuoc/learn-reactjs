@@ -1,18 +1,17 @@
-import { useState } from 'react';
 import OtpInput from 'react-otp-input';
 import CountDown from './CountDown';
 
 const InputOTP = (props) => {
-  const { setUserOTP, handleSubmit, isDisabled, setIsDisabled } = props;
+  const { userOTP, setUserOTP, handleSubmit, isDisabled, setIsDisabled } = props;
 
-  const [userOtp, setUserOtp] = useState('');
+  // const [userOtp, setUserOtp] = useState('');
 
   const { time, setTime } = props;
-  const timeDefault = 15;
+  // const timeDefault = 15;
   // const [time, setTime] = useState(timeDefault);
 
   const handleChange = (otp) => {
-    setUserOtp(otp);
+    // setUserOtp(otp);
 
     // setOTP Parent
     setUserOTP(otp);
@@ -22,7 +21,7 @@ const InputOTP = (props) => {
     <div className="input-otp">
       <div>Enter otp code</div>
       <OtpInput
-        value={userOtp}
+        value={userOTP}
         isDisabled={isDisabled}
         isInputNum={true}
         isInputSecure

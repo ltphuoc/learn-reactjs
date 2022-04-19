@@ -19,7 +19,7 @@ const Search = (props) => {
     }, 300);
   };
   return (
-    <form className="search">
+    <form className="search" onSubmit={(e) => e.preventDefault()}>
       <input
         type="text"
         placeholder="Search post by title"

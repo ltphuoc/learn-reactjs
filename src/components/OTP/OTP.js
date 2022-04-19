@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import GenerateOTP from './GenerateOTP';
 import InputOTP from './InputOTP';
 import { ToastContainer, toast } from 'react-toastify';
@@ -28,8 +28,10 @@ const OTP = () => {
         setOrgOTP={setOrgOTP}
         setTime={setTime}
         defaultTime={defaultTime}
+        setUserOTP={setUserOTP}
       />
       <InputOTP
+        userOTP={userOTP}
         setUserOTP={setUserOTP}
         handleSubmit={handleSubmit}
         isDisabled={orgOTP === '' ? true : isDisabled}

@@ -1,18 +1,11 @@
-import { useEffect, useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
 
 const GenerateOTP = (props) => {
   const [otp, setOtp] = useState('');
 
-  const { defaultTime, setTime, setOrgOTP, setIsDisabled } = props;
+  const { defaultTime, setTime, setOrgOTP, setIsDisabled, setUserOTP } = props;
 
-  useEffect(() => {
-    setTimeout(() => {
-      handleClickBtn();
-      setIsDisabled(false );
-    }, 2000);
-  }, []);
-
-  const handleClickBtn = () => {
+  const handleClickBtn = useCallback(() => {
     const otp = Math.floor(100000 + Math.random() * 900000);
     setOtp(otp);
 
@@ -20,7 +13,21 @@ const GenerateOTP = (props) => {
     setOrgOTP(otp);
     // set Time parent
     setTime(defaultTime);
-  };
+    // set button able
+    setIsDisabled(false);
+    //
+    setUserOTP('');
+  }, [defaultTime, setTime, setOrgOTP, setIsDisabled, setUserOTP]);
+
+  useEffect(() => {
+    setTimeout(() => {
+      handleClickBtn();
+      setIsDisabled(false);
+    }, 1500);
+    return () => {
+      console.log('test cleanup');
+    };
+  }, [setIsDisabled, handleClickBtn]);
 
   return (
     <div className="generate-otp">
