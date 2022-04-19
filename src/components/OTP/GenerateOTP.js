@@ -24,9 +24,6 @@ const GenerateOTP = (props) => {
       handleClickBtn();
       setIsDisabled(false);
     }, 1500);
-    return () => {
-      console.log('test cleanup');
-    };
   }, [setIsDisabled, handleClickBtn]);
 
   return (

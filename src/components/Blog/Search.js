@@ -1,12 +1,13 @@
-import { useRef, useState } from 'react';
+import { useRef } from 'react';
 
 const Search = (props) => {
-  const { onSubmit } = props;
-  const [searchTerm, setSearchTerm] = useState('');
+  const { onSubmit, searchTerm, setSearchTerm } = props;
+  // const [searchTerm, setSearchTerm] = useState('');
   const typingTimeout = useRef(null);
 
   const onSearchChange = (e) => {
     const valueSearch = e.target.value;
+    // setS(valueSearch);
     setSearchTerm(valueSearch);
 
     if (typingTimeout.current) clearTimeout(typingTimeout.current);
