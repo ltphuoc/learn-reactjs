@@ -71,7 +71,7 @@ const Blog = () => {
 
           setPostList(newData);
           setPagination(pagination);
-        }, 500);
+        }, 300);
       } catch (error) {
         console.log('failed to get api', error);
       }
@@ -97,7 +97,7 @@ const Blog = () => {
       {/* render with search not match */}
       {postList.length === 0 && searchTerm !== '' && (
         <div className="post-error">
-          <h2>Not found {searchTerm}</h2>
+          <h2>Not found with title: {searchTerm}</h2>
         </div>
       )}
 
@@ -107,7 +107,7 @@ const Blog = () => {
             key={item.id}
             className="post-item"
             style={{
-              backgroundImage: `url(${item.imageUrl})`,
+              background: `url(${item.imageUrl}) center`,
             }}
             onClick={() => handleViewDetail(item.id)}
           >

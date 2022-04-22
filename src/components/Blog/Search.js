@@ -7,12 +7,14 @@ const Search = (props) => {
 
   const onSearchChange = (e) => {
     const valueSearch = e.target.value;
-    // setS(valueSearch);
-    setSearchTerm(valueSearch);
 
     if (typingTimeout.current) clearTimeout(typingTimeout.current);
 
     typingTimeout.current = setTimeout(() => {
+      setTimeout(() => {
+        setSearchTerm(valueSearch);
+      }, 300);
+
       const formValues = {
         searchTerm: valueSearch,
       };

@@ -1,37 +1,53 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AddTodo from './AddTodo';
 import DisplayTodo from './DisplayTodo';
 
 function Todo() {
   const [todo, setTodo] = useState('');
 
-  const [listTodo, setListTodo] = useState(() => {
-    return JSON.parse(localStorage.getItem('list-todo')) ?? [];
-  });
+  // const [listTodo, setListTodo] = useState(() => {
+  //   return JSON.parse(localStorage.getItem('list-todo')) ?? [];
+  // });
+  const [listTodo, setListTodo] = useState([]);
 
   const [filterStatus, setFilterStatus] = useState('all');
+
+  useEffect(() => {
+    if (localStorage.getItem('list-todo')) {
+      setListTodo(JSON.parse(localStorage.getItem('list-todo')));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('list-todo', JSON.stringify(listTodo));
+  }, [listTodo]);
+
   const handleSubmit = () => {
     if (!todo) return;
+
     let todoId = listTodo.length + 1;
     let todoItem = {
       id: todoId,
       name: todo,
       status: 'pending',
     };
+
     const newListTodo = [...listTodo, todoItem];
 
     setListTodo(newListTodo);
     setTodo('');
 
-    localStorage.setItem('list-todo', JSON.stringify(newListTodo));
+    // localStorage.setItem('list-todo', JSON.stringify(newListTodo));
   };
 
   const handleDeleteTodo = (id) => {
-    const newListTodo = [...listTodo.filter((item) => item.id !== id)];
-
+    const newListTodo = [
+      ...listTodo.filter((item) => {
+        return item.id !== id;
+      }),
+    ];
     setListTodo(newListTodo);
-
-    localStorage.setItem('list-todo', JSON.stringify(newListTodo));
+    // localStorage.setItem('list-todo', JSON.stringify(newListTodo));
   };
 
   const handleDoneTodo = (item, index) => {
@@ -43,7 +59,7 @@ function Todo() {
     };
 
     setListTodo(newTodoList);
-    localStorage.setItem('list-todo', JSON.stringify(newTodoList));
+    // localStorage.setItem('list-todo', JSON.stringify(newTodoList));
   };
 
   const handleShowAllClick = () => {

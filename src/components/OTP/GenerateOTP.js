@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import { SpinnerCircular } from 'spinners-react';
 
 const GenerateOTP = (props) => {
   const [otp, setOtp] = useState('');
@@ -15,7 +16,7 @@ const GenerateOTP = (props) => {
     setTime(defaultTime);
     // set button able
     setIsDisabled(false);
-    //
+    // clear userOtp input
     setUserOTP('');
   }, [defaultTime, setTime, setOrgOTP, setIsDisabled, setUserOTP]);
 
@@ -29,7 +30,12 @@ const GenerateOTP = (props) => {
   return (
     <div className="generate-otp">
       <button onClick={() => handleClickBtn()}>Generate new OTP</button>
-      <div>Your OTP: {otp}</div>
+      {otp === '' && (
+        <div>
+          <SpinnerCircular size={100} />
+        </div>
+      )}
+      {otp !== '' && <div>Your OTP: {otp}</div>}
     </div>
   );
 };

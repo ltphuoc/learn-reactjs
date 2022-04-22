@@ -11,6 +11,7 @@ import Registration from './components/Registration/Registration';
 import OTP from './components/OTP/OTP';
 import Blog from './components/Blog/Blog';
 import BlogDetail from './components/Blog/BlogDetail';
+import TodoApp from './components/TodoApp/TodoApp';
 // function App() {
 const App = () => {
   const [name] = useState('Phuoc');
@@ -33,7 +34,8 @@ const App = () => {
           </div>
         </Route>
         <Route path="/todo">
-          <Todo />
+          {/* <Todo /> */}
+          <TodoApp />
         </Route>
         <Route path="/product">
           <Product />
