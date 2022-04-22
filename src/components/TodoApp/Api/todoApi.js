@@ -17,6 +17,11 @@ const todoApi = {
     const url = `${baseUrl}/${id}`;
     return axios.delete(url);
   },
+
+  update(id, data) {
+    const url = `${baseUrl}/${id}`;
+    return axios.put(url, data);
+  },
 };
 
 export default todoApi;
