@@ -19,7 +19,7 @@ const TodoApp = () => {
         console.log('Failed to fetch data', error);
       }
     })();
-  }, [todoList]);
+  }, []);
 
   const handleSubmitForm = async (formValues) => {
     if (isUpdate) {
