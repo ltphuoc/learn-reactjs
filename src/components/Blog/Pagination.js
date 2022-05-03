@@ -1,16 +1,9 @@
-import { useEffect, useState } from 'react';
-
 export default function Pagination(props) {
   const { pagination, onPageChange } = props;
   const { _page, _limit, _totalRows } = pagination;
   const handlePageChange = (newPage) => {
     onPageChange(newPage);
   };
-
-  // useEffect(() => {
-  //   const pageList = Array.from(Array(Math.ceil(_totalRows / _limit)).keys());
-  //   const [listPage, setListPage] = useState(pageList);
-  // }, [pagination]);
 
   return (
     <div className="pagination">
