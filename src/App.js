@@ -24,22 +24,14 @@ const App = () => {
             <header className="App-header content-left">
               <img src={logo} className="App-logo" alt="logo" />
               <p>Hello world with {name}</p>
-              {/* <Todo /> */}
             </header>
-            {/* <div className="content-right">
-              <AddNewProduct />
-              <hr />
-              <Product />
-            </div> */}
           </div>
         </Route>
         <Route path="/todo">
           <Todo />
           <br />
           <br />
-          <br />
           <hr />
-          <br />
           <br />
           <br />
           <TodoApp />

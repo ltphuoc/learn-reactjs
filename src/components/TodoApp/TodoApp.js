@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { SpinnerCircular } from 'spinners-react';
+// import { SpinnerCircular } from 'spinners-react';
 import AddTodo from './AddTodo';
 import todoApi from './Api/todoApi';
 import DisplayTodo from './DisplayTodo';
@@ -125,7 +125,7 @@ const TodoApp = () => {
         isUpdate={isUpdate}
       />
 
-      {todoList.length === 0 && <SpinnerCircular size={100} />}
+      {/* {todoList.length === 0 && <SpinnerCircular size={100} />} */}
 
       <DisplayTodo
         title={title}
