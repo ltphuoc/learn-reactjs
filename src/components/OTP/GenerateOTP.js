@@ -2,9 +2,9 @@ import { useCallback, useEffect, useState } from 'react';
 import { SpinnerCircular } from 'spinners-react';
 
 const GenerateOTP = (props) => {
-  const [otp, setOtp] = useState('');
-
   const { defaultTime, setTime, setOrgOTP, setIsDisabled, setUserOTP } = props;
+
+  const [otp, setOtp] = useState('');
 
   const handleClickBtn = useCallback(() => {
     const otp = Math.floor(100000 + Math.random() * 900000);

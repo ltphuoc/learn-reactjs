@@ -10,18 +10,6 @@ const TodoApp = () => {
   const [isUpdate, setIsUpdate] = useState(false);
   const [todoUpdate, setTodoUpdate] = useState({});
 
-  useEffect(() => {
-    (async () => {
-      try {
-        const { data } = await todoApi.getAll();
-
-        setTodoList(data);
-      } catch (error) {
-        console.log('Failed to fetch data', error);
-      }
-    })();
-  }, []);
-
   const handleSubmitForm = async (formValues) => {
     if (isUpdate) {
       try {
@@ -29,9 +17,13 @@ const TodoApp = () => {
           ...todoUpdate,
           title,
         });
-        console.log(data);
+
         if (data) {
-          const newTodoList = [...todoList.filter((x) => x.id !== todoUpdate.id), data];
+          // const newTodoList = [...todoList.filter((x) => x.id !== todoUpdate.id), data];
+          const todoIndex = todoList.findIndex((x) => x.id === todoUpdate.id);
+          let newTodoList = [...todoList];
+          newTodoList[todoIndex] = data;
+
           setTodoList(newTodoList);
           setIsUpdate(false);
         }
@@ -107,6 +99,18 @@ const TodoApp = () => {
   const renderedListTodo = todoList.filter(
     (todo) => filterStatus === 'all' || filterStatus === todo.isDone
   );
+
+  useEffect(() => {
+    (async () => {
+      try {
+        const { data } = await todoApi.getAll();
+
+        setTodoList(data);
+      } catch (error) {
+        console.log('Failed to fetch data', error);
+      }
+    })();
+  }, []);
 
   return (
     <div className="todo-list">

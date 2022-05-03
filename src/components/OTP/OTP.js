@@ -16,6 +16,9 @@ const OTP = () => {
   const handleSubmit = () => {
     if (+orgOTP === +userOTP) {
       toast.success('Correct');
+      // reset
+      setIsDisabled(true);
+      setTime(0);
     } else {
       toast.error('Invalid');
     }

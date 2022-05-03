@@ -4,15 +4,9 @@ import CountDown from './CountDown';
 const InputOTP = (props) => {
   const { userOTP, setUserOTP, handleSubmit, isDisabled, setIsDisabled } = props;
 
-  // const [userOtp, setUserOtp] = useState('');
-
   const { time, setTime } = props;
-  // const timeDefault = 15;
-  // const [time, setTime] = useState(timeDefault);
 
   const handleChange = (otp) => {
-    // setUserOtp(otp);
-
     // setOTP Parent
     setUserOTP(otp);
   };
@@ -23,9 +17,10 @@ const InputOTP = (props) => {
       <OtpInput
         value={userOTP}
         isDisabled={isDisabled}
-        isInputNum={true}
-        isInputSecure
         onChange={handleChange}
+        //
+        isInputNum={true}
+        // isInputSecure
         inputStyle={'input-otp__code'}
         numInputs={6}
         separator={<span>-</span>}

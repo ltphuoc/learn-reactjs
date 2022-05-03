@@ -2,7 +2,7 @@ import classNames from 'classnames';
 import React from 'react';
 import './TodoApp.scss';
 const DisplayTodo = (props) => {
-  const { todoList, handleDoneTodo, handleDeleteTodo, handleEditBtn, title, setTitle } = props;
+  const { todoList, handleDoneTodo, handleDeleteTodo, handleEditBtn, setTitle } = props;
 
   const handleRemoveClick = (id) => {
     handleDeleteTodo(id);
