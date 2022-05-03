@@ -34,7 +34,14 @@ const App = () => {
           </div>
         </Route>
         <Route path="/todo">
-          {/* <Todo /> */}
+          <Todo />
+          <br />
+          <br />
+          <br />
+          <hr />
+          <br />
+          <br />
+          <br />
           <TodoApp />
         </Route>
         <Route path="/product">

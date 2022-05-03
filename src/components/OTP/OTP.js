@@ -10,7 +10,7 @@ const OTP = () => {
   const [userOTP, setUserOTP] = useState('');
   const [isDisabled, setIsDisabled] = useState(false);
 
-  const defaultTime = 15;
+  const DEFAULT_OTP_TIME = 15;
   const [time, setTime] = useState(0);
 
   const handleSubmit = () => {
@@ -30,7 +30,7 @@ const OTP = () => {
         setIsDisabled={setIsDisabled}
         setOrgOTP={setOrgOTP}
         setTime={setTime}
-        defaultTime={defaultTime}
+        defaultTime={DEFAULT_OTP_TIME}
         setUserOTP={setUserOTP}
       />
       <InputOTP
