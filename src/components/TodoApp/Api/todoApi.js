@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const baseUrl = 'https://5f62b7ce67e195001625f17c.mockapi.io/api/todos';
 
-const todoApi = {
+const todoApi = { 
   getAll() {
     const url = `${baseUrl}`;
     return axios.get(url);

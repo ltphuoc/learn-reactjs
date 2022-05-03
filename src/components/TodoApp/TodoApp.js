@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { SpinnerCircular } from 'spinners-react';
 import AddTodo from './AddTodo';
 import todoApi from './Api/todoApi';
 import DisplayTodo from './DisplayTodo';
@@ -62,7 +63,9 @@ const TodoApp = () => {
         // let newTodoList = [...todoList];
         // let newTodo = { ...newTodoList[todo.id], isDone: todo.isDone === true ? true : false };
         // newTodoList[todo.id] = newTodo;
+
         const newTodoList = [...todoList.filter((x) => x.id !== todo.id), data];
+
         setTodoList(newTodoList);
       }
     } catch (error) {
@@ -110,12 +113,16 @@ const TodoApp = () => {
       <button onClick={handleShowAllClick}>Show All</button>
       <button onClick={handleShowCompletedClick}>Show Completed</button>
       <button onClick={handleShowOngoingClick}>Show Ongoing</button>
+
       <AddTodo
         handleSubmitForm={handleSubmitForm}
         title={title}
         setTitle={setTitle}
         isUpdate={isUpdate}
       />
+
+      {todoList.length === 0 && <SpinnerCircular size={100} />}
+
       <DisplayTodo
         title={title}
         setTitle={setTitle}
